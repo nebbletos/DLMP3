@@ -65,7 +65,7 @@ function playAudio() {
   while (true) {
     audio = files[Math.floor(Math.random() * files.length)];
     console.log('Searching for audio file...');
-    // if (audio.endsWith('.flac')&&audio!=noRepeat) {
+    // if (audio.endsWith('.mp3')) {
     if (new RegExp(supportedFiles.join("|")).test(audio)) {
       break;
     }
