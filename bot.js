@@ -60,11 +60,13 @@ function voiceInit() {
 function playAudio() {
 
   let files = fs.readdirSync(join(__dirname,'music'));
+  let supportedFiles = new Array('.mp3','flac','.wav');
 
   while (true) {
     audio = files[Math.floor(Math.random() * files.length)];
-    console.log('Searching .mp3 file...');
-    if (audio.endsWith('.mp3')) {
+    console.log('Searching for audio file...');
+    // if (audio.endsWith('.flac')&&audio!=noRepeat) {
+    if (new RegExp(supportedFiles.join("|")).test(audio)) {
       break;
     }
   }
